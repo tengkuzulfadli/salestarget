@@ -1,0 +1,33 @@
+using System;
+
+namespace LabSixFive
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Current Sales Goals : "); //This to get input current year from user
+            double salesGoal = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Number of Years : "); //To prompt number of years from user
+            int numOfYears = Convert.ToInt32(Console.ReadLine());
+
+            double incrementYears = 0.08; //Sales goal increasing 7% per year
+
+            int currentYear = 1; //Need to declare current year
+
+            do
+            {
+                Console.WriteLine("Current Sales Goal" + currentYear + " : "); //to display current year
+                   
+                salesGoal = salesGoal + (salesGoal * incrementYears); //to calculate year-to-year increment
+
+                Console.WriteLine("Your current sales goal : " + salesGoal.ToString("C")); //to display Sales goal of the years of user input
+
+                currentYear++; //it will increase based on how many years that user prompt the input
+            } while (numOfYears != currentYear); //So, when number of years of user input reached and not the same as current year, it will stop
+
+            Console.ReadKey();
+        }
+    }
+}
